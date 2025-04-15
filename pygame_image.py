@@ -27,12 +27,14 @@ def main():
         if key_lst[pg.K_LEFT]:
             kk_rct.move_ip((-1,0))#練習10-4
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((1,0))#練習10-4
+            kk_rct.move_ip((2,0))#練習10-4 この場合x座標y座標逆になっている。+と-逆
+            
         x=tmr%3200
         screen.blit(bg_img, [-x, 0])#練習6
         screen.blit(bg_img2, [-x+1600, 0])#練習7
         screen.blit(bg_img, [-x+3200, 0])#練習9
         screen.blit(kk_img,kk_rct)#練習4/練習10-3
+        kk_rct.move_ip((-1,0))
         pg.display.update()
         tmr += 1        
         clock.tick(200) #練習5
